@@ -33,7 +33,7 @@ class SecurePassUI:
 
         ctk.CTkLabel(
             self.sidebar,
-            text="🔐 SecurePass AI",
+            text="🔐 SecurePass-AI\nCyber Security Suite",
             font=("Segoe UI", 22, "bold")
         ).pack(pady=30)
 
@@ -48,8 +48,8 @@ class SecurePassUI:
         for item in menu:
             ctk.CTkButton(
                 self.sidebar,
-text=item,
-command=lambda x=item: self.sidebar_action(x)
+            text=item,
+            command=lambda x=item: self.sidebar_action(x)
             ).pack(
                 pady=10,
                 padx=20,
@@ -66,26 +66,27 @@ command=lambda x=item: self.sidebar_action(x)
         )
 
         self.main_area.pack(
-            side="right",
-            fill="both",
-            expand=True,
-            padx=10,
-            pady=10
-        )
+        side="right",
+        fill="both",
+        expand=True,
+        padx=10,
+        pady=10
+)
 
+        self.main_area._parent_canvas.yview_moveto(0)
         # ===========================
         # Heading
         # ===========================
 
         ctk.CTkLabel(
             self.main_area,
-            text="Password Strength Checker",
+            text="🔐 Password Security Analyzer",
             font=("Segoe UI", 30, "bold")
         ).pack(pady=(20, 10))
 
         ctk.CTkLabel(
             self.main_area,
-            text="Check how secure your password is.",
+           text="Analyze password strength, security risks and recommendations",
             font=("Segoe UI", 16)
         ).pack(pady=(0, 20))
 
@@ -95,9 +96,9 @@ command=lambda x=item: self.sidebar_action(x)
 
         self.password_entry = ctk.CTkEntry(
     self.main_area,
-    width=560,
+    width=620,
     height=50,
-    placeholder_text="Enter your password",
+    placeholder_text="Enter password to analyze",
     font=("Segoe UI", 16),
     show="*"
 )

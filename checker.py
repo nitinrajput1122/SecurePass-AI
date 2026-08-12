@@ -78,8 +78,33 @@ def check_password(password):
     else:
         result["crack_time"] = "Many Years"
 
-    if not result["suggestions"]:
+    if not result["length"]:
         result["suggestions"].append(
+            "⚠ Password should contain at least 8 characters."
+        )
+
+    if not result["uppercase"]:
+        result["suggestions"].append(
+            "⚠ Add at least one uppercase letter."
+        )
+
+    if not result["lowercase"]:
+        result["suggestions"].append(
+            "⚠ Add at least one lowercase letter."
+        )
+
+    if not result["number"]:
+        result["suggestions"].append(
+            "⚠ Add at least one number."
+        )
+
+    if not result["special"]:
+        result["suggestions"].append(
+            "⚠ Add at least one special character."
+        )
+
+        if not result["suggestions"]:
+         result["suggestions"].append(
             "✅ No security issues detected."
         )
 
